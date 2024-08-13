@@ -1,0 +1,6 @@
+com\dio\cadastro\repository\PessoaRepository.class
+com\dio\cadastro\controller\PessoaController.class
+com\dio\cadastro\service\PessoaService.class
+com\dio\cadastro\dto\PessoaDTO.class
+com\dio\cadastro\model\Pessoa.class
+com\dio\cadastro\CadastroPessoasApplication.class

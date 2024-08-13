@@ -1,0 +1,85 @@
+<!-- Elemento raiz com configuração de namespace para arquivo POM do Maven -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <!-- Versão do modelo Maven, sempre 4.0.0 para especificações do Maven versão 2.x -->
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- Group ID identifica unicamente seu projeto entre todos os projetos -->
+    <groupId>com.dio</groupId>
+
+    <!-- Artifact ID é o nome do jar sem a versão -->
+    <artifactId>cadastro-pessoas</artifactId>
+
+    <!-- Versão do projeto -->
+    <version>1.0-SNAPSHOT</version>
+
+    <!-- Tipo de empacotamento, jar é Java ARchive, pode ser war para aplicações web -->
+    <packaging>jar</packaging>
+
+    <!-- POM pai, herdando configuração do Spring Boot starter parent -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.7.5</version>
+    </parent>
+
+    <!-- Tag de propriedades para definir variáveis e propriedades do projeto -->
+    <properties>
+        <java.version>11</java.version> <!-- Versão do Java a ser usada -->
+    </properties>
+
+    <!-- Seção de dependências para definir as dependências do projeto -->
+    <dependencies>
+        <!-- Spring Boot starter web, inclui todas as dependências necessárias para criar aplicações web -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- Spring Boot starter data JPA, simplifica operações de acesso a dados usando JPA -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+
+        <!-- Spring Boot starter validation, suporta validação usando a API de validação de beans do Java -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+
+        <!-- MapStruct, uma biblioteca usada para mapeamento de objetos em Java -->
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct</artifactId>
+            <version>1.5.2.Final</version>
+        </dependency>
+
+        <!-- Spring Boot starter test, fornece suporte para testes, incluído apenas no escopo de teste -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- H2, um banco de dados em memória, incluído apenas no escopo de runtime -->
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>2.1.214</version> <!-- Versão estável e disponível -->
+            <scope>runtime</scope>
+        </dependency>
+    </dependencies>
+
+    <!-- Build, configura plugins usados durante a construção do projeto -->
+    <build>
+        <plugins>
+            <!-- Plugin do Spring Boot Maven, facilita a construção e execução de aplicações Spring Boot -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>
